@@ -41,4 +41,5 @@ def get_weather(longitude, latitude):
 	hourly_dataframe = pd.DataFrame(data=hourly_data)
 	print(hourly_dataframe)
 
-	return hourly_dataframe.to_json(orient="records")
+	result = hourly_dataframe.to_json(orient="records", date_format="iso")
+	return result
